@@ -1,0 +1,25 @@
+[project]
+name = "insights-mcp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Patrik Segedy", email = "psegedy@redhat.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "click>=8.2.1",
+    "insights-mcp-core",
+    "insights-vulnerability-mcp",
+]
+
+[project.scripts]
+insights-mcp = "insights_mcp:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.sources]
+insights-mcp-core = { git = "https://github.com/psegedy/insights-mcp-core" }
+insights-vulnerability-mcp = { git = "https://github.com/psegedy/insights-vulnerability-mcp" }
